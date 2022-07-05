@@ -38,5 +38,10 @@ var games = {
 		name: "적 죽이기",
 		path: "적 죽이기",
 		mainpath: "적 죽이기/main.html"
+	},
+	60:{
+		name: "에임연습",
+		path: "에임연습",
+		mainpath: "에임연습/main.html"
 	}
 };

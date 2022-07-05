@@ -1,0 +1,44 @@
+#work_box{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 1600px;
+	height: 900px;
+	transform: translate(-50%, -50%);
+	border: solid 8px grey;
+}
+\
+
+#scoreboard{
+	position: absolute;
+	left: 90%;
+	top: 5%;
+	width: 120px;
+	height: 50px;
+	font-size: 30px;
+	border: solid;
+	text-align: center;
+}
+
+.enemy{
+	z-index: 999;
+	position: absolute;
+	padding: none;
+	margin: none;
+}
+
+.hp_bar{
+	background-color: green;
+	height: 17%;
+	margin-bottom: 5%;
+}
+
+img{
+	width: 100%;
+	height: 78%;
+}
+
+body {
+    cursor: url("./image/cursor0.cur") 15 15, auto;
+}
+
