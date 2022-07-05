@@ -35,9 +35,9 @@ var games = {
 		mainpath: "장애물 달리기/main.html"
 	},
 	50:{
-		name: "적 죽이기",
-		path: "적 죽이기",
-		mainpath: "적 죽이기/main.html"
+		name: "슈팅",
+		path: "슈팅",
+		mainpath: "슈팅/main.html"
 	},
 	60:{
 		name: "에임연습",
