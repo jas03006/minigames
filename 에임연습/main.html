@@ -2,15 +2,24 @@
 <html>
 	<head>
 		<meta http-equv="Content-Type" content="text/html" charset="UTF-8">
-		<title>총쏘기</title>
+		<title>에임연습</title>
 		<script type="text/javascript" src="./enemy_db.js" charset="UTF-8"></script>
 		<script type="text/javascript" src="./gun_db.js" charset="UTF-8"></script>
 		<script type="text/javascript" src="./main.js" charset="UTF-8"></script>
 		<link rel="stylesheet" href="./main.css" type="text/css">
 	</head>
 	<body>
-		<h2>방향키</h2> <h2>스페이스바</h2> <h2>Q</h2> <button> move </button>
-		<div id="scoreboard">0</div>
+		<div id="end_box">
+			<div id="success_box">
+				<div id="end_score"></div>
+				<button class="interface_button" id="restart_button">시작하기</button>
+			</div>
+			</div>
+		</div>
+		
+		<h2> 마우스 클릭 </h2> <h2 style="color: red;"> 목숨 </h2> <h2> 점수 </h2>
+		<div id="board"><div id="lifeboard"></div>
+		<div id="scoreboard">0</div></div>
 		<div id="work_box">
 			
 		</div>

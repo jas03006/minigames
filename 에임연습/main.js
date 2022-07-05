@@ -1,5 +1,7 @@
 var character;
-var scoreboard;
+var scoreboard, lifeboard;
+var score = 0;
+var life = 10;
 var image_path = "./image";
 var attacks;
 var enemies;
@@ -9,6 +11,8 @@ window.onload = main;
 
 function main(){
 	scoreboard = document.getElementById("scoreboard");
+	lifeboard = document.getElementById("lifeboard");
+	lifeboard.innerText = life;
 	character = document.getElementById("character");
 	load_gun(0);
 	work_box = document.getElementById("work_box");
@@ -16,8 +20,12 @@ function main(){
 	minl = work_box.getBoundingClientRect().left;
 	maxt = work_box.getBoundingClientRect().bottom;
 	maxl = work_box.getBoundingClientRect().right;
-	console.log(` ${maxt}, ${mint}, ${maxl}, ${minl}`);
-	window.requestAnimationFrame(animation_frame);
+	//console.log(` ${maxt}, ${mint}, ${maxl}, ${minl}`);
+	var restart_button = document.getElementById("restart_button");
+	restart_button.onclick = click_start;
+	show_start();
+	
+	//window.requestAnimationFrame(animation_frame);
 	//init_frame_timer();
 }
 
@@ -40,8 +48,6 @@ var character_speed;
 //맵의 스펙
 var bottom_bound = 810;
 var enemy_regen_cooltime = 1000;
-
-var score = 0;
 
 var now;
 
@@ -70,8 +76,34 @@ function animation_frame(timestamp){
 	}
 	load_stage(0, dt);//스테이지에 따른 몹생성
 	enemies_move(dt);
+	if(life>0){
+		window.requestAnimationFrame(animation_frame);
+	}else{
+		show_start();
+	}
+}
+
+function start_game(){
+	enemies = document.getElementsByClassName("enemy");
+	for(var i = 0; i < enemies .length; i++){
+		enemies[i].remove();
+	}
+	score = 0;
+	life = 10;
+	start = null;
+	lifeboard.innerText = life;
+	scoreboard.innerText = score;
 	window.requestAnimationFrame(animation_frame);
 }
+function show_start(){
+	document.getElementById("end_box").style.visibility = "";
+	document.getElementById("end_score").innerText = score;
+}
+function click_start(){
+	document.getElementById("end_box").style.visibility = "hidden";
+	start_game();
+}
+
 
 function load_gun(n){
 	now_gun = document.createElement("div");
@@ -174,5 +206,7 @@ async function enemy_move(now, dt){
 	now.style.left = l - d*now.getAttribute("data-directionX") + "px";
 	if(now.getBoundingClientRect().bottom >= maxt || t <= mint || now.getBoundingClientRect().right >= maxl || l <= minl){
 		now.remove();
+		life--;
+		lifeboard.innerText = life;
 	}
 }

@@ -7,17 +7,27 @@
 	transform: translate(-50%, -50%);
 	border: solid 8px grey;
 }
-\
-
-#scoreboard{
+#board{
 	position: absolute;
-	left: 90%;
-	top: 5%;
-	width: 120px;
-	height: 50px;
-	font-size: 30px;
-	border: solid;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border: none;
 	text-align: center;
+	font-weight: bold;
+	opacity: 0.5;
+}
+#lifeboard{
+	width: 100px;
+	height: 50px;
+	font-size: 80px;
+	color: red;
+	margin-bottom: 50%;
+}
+#scoreboard{
+	width: 100px;
+	height: 50px;
+	font-size: 80px;
 }
 
 .enemy{
@@ -42,3 +52,46 @@ body {
     cursor: url("./image/cursor0.cur") 15 15, auto;
 }
 
+#end_box{
+	position: absolute;
+	z-index: 1100;
+	top: 0;
+	width:100%;
+	height: 100%;
+	background-color: rgba(200,200,200,0.6);
+}
+
+#success_box{
+	z-index: 1100;
+	position: absolute;
+	width: 30%;
+	height: 30%;
+	left: 35.75%;
+	margin-right: auto;
+	margin-top: 400px;
+	text-align: center;
+	border: solid;
+	border-radius: 30px;
+	padding-top: 0px;
+	background-color: #dddddd;
+	font-size: 60px;
+}
+#end_score{
+	z-index: 1100;
+	margin:5%;
+}
+#restart_button{
+	z-index: 1100;
+	width: 30%;
+	height: 30%;
+	position: relative;
+	font-size: 60%;
+	opacity: 1;
+	border: solid;
+	border-radius: 0.7vw;
+	word-wrap: break-word;
+	display: inline-block;
+}
+#restart_button:hover{
+	cursor: pointer;
+}
