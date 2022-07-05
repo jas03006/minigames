@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equv="Content-Type" content="text/html" charset="UTF-8">
+		<link href="./main.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div id="start_box">
+			<button class="interface_button" id="start_button">시작</button>
+		</div>
+		
+		<div id="end_box">
+			<div id="success_box">
+				<input type="text" name="success_dif" id="success_dif" readonly/>
+				<input type="text" name="success_time" id="success_time" readonly/>
+				<button class="interface_button" id="restart_button">다시하기</button>
+			</div>
+		</div>
+		
+		<div id="upper_interface">
+			<div class="dropdown">
+				<button class="dropbtn" value="1">쉬움</button>
+				<div class="dropdown-content">
+					<button class="dif_button" value="1">쉬움</button>
+					<button class="dif_button" value="2">보통</button>
+					<button class="dif_button" value="3">어려움</button>
+					<button class="dif_button" value="-5">TEST</button>
+				</div>
+			</div>
+			<div id="timer_box"> 
+				<label class="timer" id="minutes">00</label>:<label class="timer" id="seconds">00</label>
+			</div>
+		</div>
+		
+		<table id="sudoku">
+		</table>
+		
+		<table id="keyboard">
+			<tr><td colspan="3"><button id="memokey" value="0">Memo</button></td></tr>
+			<tr>
+				<td><button class="numkey" id="1key" value="1">1</button></td>
+				<td><button class="numkey" id="2key" value="2">2</button></td>
+				<td><button class="numkey" id="3key" value="3">3</button></td>
+			</tr>
+			<tr>
+				<td><button class="numkey" id="4key" value="4">4</button></td>
+				<td><button class="numkey" id="5key" value="5">5</button></td>
+				<td><button class="numkey" id="6key" value="6">6</button></td>
+			</tr>
+			<tr>
+				<td><button class="numkey" id="7key" value="7">7</button></td>
+				<td><button class="numkey" id="8key" value="8">8</button></td>
+				<td><button class="numkey" id="9key" value="9">9</button></td>
+			</tr>
+			<tr><td colspan="3"><button id="erasekey">Erase</button></td></tr>
+		</table>
+		<script src="./map.js" charset="UTF-8"></script>
+		<script src="./main.js" charset="UTF-8"></script>	
+	</body>
+</html>

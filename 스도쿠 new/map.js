@@ -9,12 +9,15 @@ var map0 = [
 [0,0,0,0,0,0,0,0,8],
 [0,0,0,0,0,0,0,0,9]
 ];
-
+var xy = [];
+var totalsize = map0.length*map0.length;
 var drop_button = document.getElementsByClassName("dropbtn")[0];
 var difficulty = drop_button.value;
 var temp = 0;
 
+
 map_generate();
+
 
 function clear_map(){
 	for(var i = 0; i < map0.length; i++){
@@ -36,37 +39,96 @@ function map_generate(){
 }
 
 function make_problem(dif){
-	var eliminate_step = 36 + dif*17;
-	var x;
-	var y;
-	var v;
-	var c;
+	var eliminate_step = 32 + dif*9;
+	xy = [];
+	var ind,x,y,v,c;
+	var availables;
+	var t;
+	var dt = 0;
 	temp = 0;
 	if(eliminate_step <= 0){
 		eliminate_step = 1;
 	}
+	
+	for(var i = 0; i < totalsize; i++){
+		xy.push(i);
+	}
+	
 	for(var i = 0; i < eliminate_step; i++){
-		x = Math.floor(Math.random() * map0.length);
-		y = Math.floor(Math.random() * map0[0].length);
-		v = map0[x][y];
-		if(map0[x][y] ==0){
-			temp--;
+		//x = Math.floor(Math.random() * map0.length);
+		//y = Math.floor(Math.random() * map0[0].length);
+		if(xy.length ==0){
+			break;
 		}
+		ind = Math.floor(Math.random() * xy.length);
+		x = xy[ind];
+		y = x%map0.length;
+		x = (x-y)/map0.length;
+		//console.log(x);
+		//console.log(y);
+		v = map0[x][y];
+		xy.splice(ind,1);
 		map0[x][y] = 0;
-		c = cal_solution_cnt();
-		if(c != 1){
-			console.log("fail");
+		
+		
+		
+		availables = get_availables(x, y);
+		availables.splice(availables.indexOf(v),1);
+		if(availables.length == 0){
+			//console.log("hi");
+			temp++;
+			continue;
+		}
+		c = 0;
+		
+		t = Date.now();
+		
+		for(var e in availables){
+			map0[x][y] = availables[e];
+			c += cal_solution_cnt();
+		}
+		
+		dt += Date.now() - t;
+		
+		map0[x][y] = 0;
+		//c = cal_solution_cnt();
+		if(c != 0){
 			map0[x][y] = v;
+			i--;
 		}else{
 			temp++;
 		}
 	}
-	console.log(`${temp} / ${eliminate_step}`);
+	console.log(`${temp} / ${eliminate_step}\n  ${dt}`);
 }
-	
+
+// available이 적은 칸부터 조사하기 (우선순위 적용)
 function cal_solution_cnt(){
 	var availables;
 	var cnt =0;
+	
+	for(var i = 0; i < map0.length; i++){
+		for(var j = 0; j < map0[i].length; j++){
+			if(map0[i][j] == 0){
+				availables = get_availables(i,j);
+				if(availables.length == 0){
+					return 0;
+				}
+				if(availables.length == 1){
+					map0[i][j] = availables[0];
+					if(is_full()){
+						map0[i][j] = 0;
+						return 1;
+					}
+					cnt += cal_solution_cnt();
+					map0[i][j] = 0;
+					return cnt;
+				}
+				
+			}
+		}
+	}		
+	
 	for(var i = 0; i < map0.length; i++){
 		for(var j = 0; j < map0[i].length; j++){
 			if(map0[i][j] == 0){
