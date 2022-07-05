@@ -55,8 +55,8 @@ function update_frame(){
 		}else if(keymap[81]){ //q
 			shoot(1);
 		}
-		keymap[32] = false;
-		keymap[113] = false;
+		//keymap[32] = false;
+		//keymap[113] = false;
 		attack_cool_timer = 0;
 	}else{
 		attack_cool_timer += refresh_time;
