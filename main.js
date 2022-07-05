@@ -9,8 +9,8 @@ function main(){
 
 function create_game_buttons(){
 	var now;
-	var l =Object.keys(games).length;
-	for(var i = 0; i < l; i++){
+	//var l =Object.keys(games).length;
+	for(var i in games){
 		now = games[i];
 		var new_game_button = document.createElement("button");
 		new_game_button.innerHTML = now.name;
