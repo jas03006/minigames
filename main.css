@@ -1,0 +1,26 @@
+#game_select_box{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 1615px;
+	height: 900px;
+	transform: translate(-50%, -50%);
+	border: solid 8px grey;
+	overflow: scroll;
+	padding: 40px;
+	box-sizing: border-box;
+}
+
+.game_buttons{
+	width: 200px;
+	height: 200px;
+	border: solid 4px grey;
+	margin: 50px;
+	font-size: 40px;
+	float:left
+}
+.game_buttons:hover{
+	cursor: pointer;
+	background-color: yellow;
+	
+}

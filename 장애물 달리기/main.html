@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equv="Content-Type" content="text/html; charset=UTF-8">
+		<title>장애물 달리기</title>
+		<script type="text/javascript" src="./attack_db.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./character_db.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./main.js" charset="UTF-8"></script>
+		<link rel="stylesheet" href="./main.css" type="text/css">
+	</head>
+	<body>
+		<h2>좌우 방향키: 이동</h2>
+		<h2>스페이스바: 점프</h2>
+		<div id="scoreboard">0</div>
+		<div id="work_box">
+		<div id="line0" class="line"></div>
+		<div id="line1"class="line"></div>
+		<div id="line2" class="line"></div>
+		<div id="character">주인공</div>
+		</div>
+		<div id="warning_msg"> <div id="msg_text">장애물을 피해 달리세요!</div> <button id="start_button" onclick="start();">시작</button><button id="retry_button" onclick="retry();">재시도</button></div>
+	</body>
+</html>

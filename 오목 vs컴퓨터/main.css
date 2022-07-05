@@ -1,0 +1,170 @@
+#work_box{
+	position: absolute;
+	left: 50%;
+	top: 52%;
+	transform: translate(-50%, -50%);
+	border: solid 8px grey;
+}
+
+#visual_table {
+	margin:0;
+	padding:0;
+	border-spacing: 0;
+}
+.gomoku_row{
+	border: none 0;
+	padding:0;
+	margin:0;
+}
+
+.gomoku_cell{
+	border: none 0;
+	padding:0;
+	margin:0;
+	background-color: #964b00;
+}
+.gomoku_cell_table{
+	border: none;
+	height: 48px;
+	width: 48px;
+	margin:0;
+	padding:0;
+	border-collapse: collapse;
+	border-spacing: 0;
+	table-layout: fixed;
+}
+.gomoku_cell_table tr{
+	border-collapse: collapse;
+	border: none;
+	margin:0;
+	padding:0;
+}
+.gomoku_cell_table tr td{
+	border-collapse: collapse;
+	margin:0;
+	padding:0;
+}
+
+.cell1 {
+	border-right: solid; 
+	border-bottom: solid;
+}
+.cell2 {
+	border-bottom: solid;	
+}
+.cell3 {
+	border-right: solid;
+}
+.cell4 {
+	height:50%;
+}
+
+.stone {
+	position: absolute;
+	margin:3px;
+	height: 42px;
+	width: 42px;
+	border-radius: 100%;
+	text-align: center;
+	line-height: 42px;
+	z-index: 50;
+	
+}
+.table_point{
+	position: absolute;
+	margin-left: 16px;
+	margin-top: 16px;
+	height: 16px;
+	width: 16px;
+	border-radius: 20px;
+	z-index: 49;
+	transform: translate(0, -48px);
+}
+.big_table_point{
+	position: absolute;
+	margin-left: 14px;
+	margin-top: 14px;
+	height: 20px;
+	width: 20px;
+	border-radius: 20px;
+	z-index: 49;
+	transform: translate(0, -48px);
+}
+
+#restart_box{
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+	height: 100%;
+}
+#restart_back{
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+	height: 100%;
+	background-color: #dddddd;
+	opacity: 0.6;
+	text-align: center;
+	font-size: 70px;
+	color: red;
+	padding-top: 200px;
+}
+#restart_button{
+	position: absolute;
+	z-index: 101;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 110px;
+	height: 50px;
+	opacity: 1;	
+	font-size: 25px;
+	font-weight: bold;
+	background-color: yellow;
+	box-shadow: 4px 4px 0 0;
+}
+#restart_button:hover{
+	cursor: pointer;
+}
+
+#order_button{
+	position: absolute;
+	z-index: 101;
+	left: 50%;
+	top: 40%;
+	transform: translate(-50%, -50%);
+	width: 250px;
+	height: 50px;
+	opacity: 1;
+	font-size: 25px;
+	font-weight: bold;
+	box-shadow: 4px 4px 0 0;
+}
+#order_button:hover{
+	cursor: pointer;
+}
+#do_button_box{
+	z-index: 90;
+	position: fixed;
+	left: 50%;
+	top: 0.5%;
+	transform: translate(-50%, 0);
+}
+.do_button{
+	font-size: 25px;
+}
+.do_button:hover{
+	cursor: pointer;
+}
+.arrow{
+	border: solid black;
+	border-width: 0 5px 5px 0;
+	display: inline-block;
+	padding: 5px;
+}
+.left{
+	transform: rotate(135deg);
+}
+.right{
+	transform: rotate(-45deg);
+}

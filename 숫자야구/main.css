@@ -1,0 +1,53 @@
+#game_box{
+	position: absolute;
+	height: 98%;
+	width: 40%;
+	left: 30%;
+	border: solid;
+}
+#result_box{
+	position: absolute;
+	border: solid;
+	width: 80%;
+	height: 70%;
+	margin-left: 10%;
+	margin-top: 5%;
+	overflow-y: scroll;
+	table-layout: fixed;
+}
+#result_table{
+	position: absolute;
+	//border: solid;
+	width: 99%;
+	//height: 70%;
+
+}
+
+#result_table tr td{
+	text-align: center;
+	height: 50px;
+	width: 40%;
+	border: solid;
+}
+
+#input_box{
+	position: absolute;
+	top: 80%;
+	left:34%;
+	width: 32%;
+	height: 40px;
+	border: solid;
+}
+
+#myinput{
+	height: 75%;
+	margin-left: 1%;
+	margin-top: 1%;
+	font-size: 20px;
+	width: 70%;
+}
+
+#submit_btn{
+	height: 75%;
+	cursor: pointer;
+}

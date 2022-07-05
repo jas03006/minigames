@@ -1,0 +1,104 @@
+
+body{
+	overflow: hidden;
+}
+#work_box{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 500px;
+	height: 1100px;
+	transform: translate(-50%, -50%);
+	border: solid 8px grey;
+	overflow: hidden;
+}
+.line{
+	position: absolute;
+	width: 160px;
+	height: 1100px;
+	border: dashed;
+	background-color:rgba(160,140,100,0.8);
+}
+#warning_msg{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 600px;
+	height: 400px;
+	transform: translate(-50%, -50%);
+	border: solid 8px grey;
+	text-align: center;
+	font-size: 40px;
+	font-weight: bold;
+	color: red;
+	z-index: 2000;
+	background-color:yellow;
+}
+
+#msg_text{
+	margin-top:20%;
+}
+#start_button{
+	position: absolute;
+	top: 70%;
+	left: 35%;
+	width: 30%;
+	height: 20%;
+	cursor: pointer;
+	font-size: 25px;
+	font-weight: bold;
+	color: green;
+	display: block;
+}
+#retry_button{
+	position: absolute;
+	top: 70%;
+	left: 35%;
+	width: 30%;
+	height: 20%;
+	cursor: pointer;
+	font-size: 25px;
+	font-weight: bold;
+	color: green;
+	display: none;
+}
+
+.character{
+	background-color: red;
+	z-index: 1000;
+	text-align: center;
+	font-weight: bold;
+	color: yellow;
+	box-shadow: -2px 3px 1px 2px rgba(30,30,30,0.8)
+}
+
+#scoreboard{
+	position: absolute;
+	left: 90%;
+	top: 5%;
+	width: 120px;
+	height: 50px;
+	font-size: 30px;
+	border: solid;
+	text-align: center;
+}
+
+.attack{
+	z-index: 1001;
+	position: absolute;
+	border: solid;
+	padding: none;
+	margin: none;
+}
+
+img{
+	width: 100%;
+	height: 100%;
+}
+
+.jumping_object{
+	box-shadow: -3px 9px 2px 3px rgba(30,30,30,0.8)
+}
+
+
+
